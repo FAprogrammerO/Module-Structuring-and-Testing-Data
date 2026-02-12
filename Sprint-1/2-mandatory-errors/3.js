@@ -1,5 +1,9 @@
 const cardNumber = 4533787178994213;
-const last4Digits = cardNumber.slice(-4);
+const numberString = cardNumber.toString(); // We have to convert the cardNumber to a string first before slicing the last 4 digits.
+const last4Digits = numberString.slice(-4);
+const num = Number(last4Digits);
+
+console.log(num);
 
 // The last4Digits variable should store the last 4 digits of cardNumber
 // However, the code isn't working
