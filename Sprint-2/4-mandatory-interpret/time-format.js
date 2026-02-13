@@ -16,8 +16,7 @@ function formatTimeDisplay(seconds) {
 
 // Questions
 
-// a) When formatTimeDisplay is called how many times will pad be called?
-// =============> write your answer here
+// a) When formatTimeDisplay is called how many times will pad be called?// =============> 3
 
 // Call formatTimeDisplay with an input of 61, now answer the following:
 
