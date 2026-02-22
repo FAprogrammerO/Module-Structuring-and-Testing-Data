@@ -28,6 +28,8 @@ function formatTimeDisplay(seconds) {
 
 // d) What is the value assigned to num when pad is called for the last time in this program?  Explain your answer
 // =============> num=1
+// Explanation: the third and final call to pad is with remainingSeconds, which equals 1 when the input is 61 seconds.
 
 // e) What is the return value assigned to num when pad is called for the last time in this program?  Explain your answer
 // =============> "01"
+// Explanation: the number 1 is converted to a string and padded to 2 digits, resulting in "01".
