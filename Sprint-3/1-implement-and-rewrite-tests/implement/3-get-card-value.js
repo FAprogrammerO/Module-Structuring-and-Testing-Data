@@ -21,15 +21,55 @@
 // After you have implemented the function, write tests to cover all the cases, and
 // execute the code to ensure all tests pass.
 
-function getCardValue(card) {
+/*function getCardValue(card) {
   // TODO: Implement this function
-}
+}*/
 
 // The line below allows us to load the getCardValue function into tests in other files.
 // This will be useful in the "rewrite tests with jest" step.
-module.exports = getCardValue;
+//module.exports = getCardValue;
 
 // Helper functions to make our assertions easier to read.
+/*function assertEquals(actualOutput, targetOutput) {
+  console.assert(
+    actualOutput === targetOutput,
+    `Expected ${actualOutput} to equal ${targetOutput}`
+  );
+}*/
+
+// TODO: Write tests to cover all outcomes, including throwing errors for invalid cards.
+// Examples:function getCardValue(card) {
+  // Ensure that the last char is a suit, otherwise throw an error
+  function getCardValue(card) {
+  // Type check
+  if (typeof card !== "string") {
+    throw new Error("Invalid card");
+  }
+  
+  const suits = ["♠", "♥", "♦", "♣"];
+  if (!suits.includes(card.slice(-1))) {
+    throw new Error("Invalid card");
+  }
+
+  const rank = card.slice(0, -1);
+  const validRank = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+
+  if (!validRank.includes(rank)) {
+    throw new Error("Invalid card");
+  }
+
+  // Clean lookup for values
+  const rankValues = {
+    "A": 11, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9, "10": 10,
+    "J": 10, "Q": 10, "K": 10
+  };
+  
+  return rankValues[rank];
+}
+
+module.exports = getCardValue;
+
+
 function assertEquals(actualOutput, targetOutput) {
   console.assert(
     actualOutput === targetOutput,
@@ -37,16 +77,21 @@ function assertEquals(actualOutput, targetOutput) {
   );
 }
 
-// TODO: Write tests to cover all outcomes, including throwing errors for invalid cards.
-// Examples:
-assertEquals(getCardValue("9♠"), 9);
+// Tests
+assertEquals(getCardValue("A♠"), 11);
+assertEquals(getCardValue("K♥"), 10);
+assertEquals(getCardValue("10♦"), 10);
+assertEquals(getCardValue("2♣"), 2);
 
-// Handling invalid cards
-try {
-  getCardValue("invalid");
+// Invalid card tests
+const invalidCards = ["invalid", 7, "", "AA♠", "10♠♦", "10"];
+invalidCards.forEach(invalidCard => {
+  try {
+    getCardValue(invalidCard);
+    console.error(`❌ Error not thrown for: ${invalidCard}`);
+  } catch (e) {
+    // Expected
+  }
+});
 
-  // This line will not be reached if an error is thrown as expected
-  console.error("Error was not thrown for invalid card");
-} catch (e) {}
-
-// What other invalid card cases can you think of?
+console.log("\n✅ All tests completed!");
