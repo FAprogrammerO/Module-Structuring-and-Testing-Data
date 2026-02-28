@@ -1,4 +1,4 @@
-const repeatStr = require("./repeat-str");
+//const repeatStr = require("./repeat-str");
 
 // ───────────────────────────────────────────────────────
 // Rule Summary:
@@ -7,7 +7,7 @@ const repeatStr = require("./repeat-str");
 // • count = 0 → empty string ""
 // • count < 0 → throw error (invalid input)
 // ───────────────────────────────────────────────────────
-
+const repeatStr = require("./repeat-str");
 // ── Case 1: Multiple repetitions (count > 1) ──
 test("repeats string correctly for count > 1", () => {
   expect(repeatStr("hello", 3)).toEqual("hellohellohello");
