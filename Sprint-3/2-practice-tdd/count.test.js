@@ -6,7 +6,7 @@
 // ═══════════════════════════════════════════════════════
 
 // implement a function countChar that counts the number of times a character occurs in a string
-const countChar = require("./count");
+//const countChar = require("./count");
 
 // ───────────────────────────────────────────────────────
 // 📋 Specification:
@@ -25,6 +25,7 @@ const countChar = require("./count");
 // And a character `char` that occurs one or more times in `str` (e.g., 'a' in 'aaaaa'),
 // When the function is called with these inputs,
 // Then it should correctly count occurrences of `char`.
+const countChar = require("./count");
 test("should count multiple occurrences of a character", () => {
   const str = "aaaaa";      // 🎯 Input: repeated character
   const char = "a";         // 🔍 Search for: 'a'
