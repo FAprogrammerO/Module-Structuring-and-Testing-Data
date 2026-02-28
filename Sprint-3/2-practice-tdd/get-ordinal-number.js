@@ -11,6 +11,4 @@ function getOrdinalNumber(num) {
     return numberToString + "rd";
   return numberToString + "th";
 }
-
-
 module.exports = getOrdinalNumber;
