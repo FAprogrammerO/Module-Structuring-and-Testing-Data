@@ -1,5 +1,5 @@
 
-const getOrdinalNumber = require("./get-ordinal-number");
+//const getOrdinalNumber = require("./get-ordinal-number");
 
 // ───────────────────────────────────────────────────────
 // 📋 Rule Summary:
@@ -7,7 +7,7 @@ const getOrdinalNumber = require("./get-ordinal-number");
 // • 11, 12, 13 → always "th" (teen exception)
 // • All others → last digit determines suffix
 // ───────────────────────────────────────────────────────
-
+const getOrdinalNumber = require("./get-ordinal-number");
 // ── Case 1: Numbers ending in 1 (excluding teens) → "st" ──
 test("appends 'st' to numbers ending in 1, except 11", () => {
   expect(getOrdinalNumber(1)).toEqual("1st");    // single digit
